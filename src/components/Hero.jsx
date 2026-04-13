@@ -57,15 +57,15 @@ export default function Hero() {
           <div className="mt-12 sm:mt-16 flex flex-wrap items-center gap-6 justify-center sm:justify-start text-white/70 text-xs sm:text-sm">
             <div className="flex items-center gap-2">
               <span className="w-8 h-px bg-white/40"></span>
-              <span>Free Shipping</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="w-8 h-px bg-white/40"></span>
-              <span>Easy Returns</span>
+              <span>Easy Delivery</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="w-8 h-px bg-white/40"></span>
               <span>WhatsApp Ordering</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-8 h-px bg-white/40"></span>
+              <span>Easy Returns </span>
             </div>
           </div>
         </div>

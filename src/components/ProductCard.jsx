@@ -19,6 +19,10 @@ export default function ProductCard({ product }) {
 
   return (
     <div className="group bg-white  overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full">
+       <Link
+          href={`/products/${product.id}`}
+        
+        >
       {/* Image container with badges */}
       <div className="relative aspect-[3/4] overflow-hidden bg-gray-100">
         <img
@@ -111,13 +115,11 @@ export default function ProductCard({ product }) {
         </div>
 
         {/* Action Button */}
-        <Link
-          href={`/products/${product.id}`}
-          className="mt-4 w-full text-center bg-gray-50 hover:bg-gray-100 text-gray-800 text-sm font-medium py-2.5 px-4 rounded-xl transition-colors border border-gray-200"
-        >
-          View Details
-        </Link>
+       
+        
+        
       </div>
+</Link>
     </div>
   );
 }

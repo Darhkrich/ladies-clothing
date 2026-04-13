@@ -162,7 +162,7 @@ export default function Home() {
       {/* FOOTER (simple version – can be extracted to separate component later) */}
       <footer className="border-t border-gray-100 bg-white py-8">
         <div className="max-w-7xl mx-auto px-6 text-center text-sm text-gray-500">
-          <p>© 2026 Your Store Name. All rights reserved.</p>
+          <p>© 2026 DevMasters. All rights reserved.</p>
         </div>
       </footer>
     </main>
