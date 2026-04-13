@@ -99,7 +99,7 @@ export default function ProductCard({ product }) {
           {/* Colors (optional, if you want to show swatches) */}
           {product.colors && product.colors.length > 0 && (
             <div className="flex items-center gap-1 mt-2">
-              {product.colors.slice(0, 3).map((color) => (
+              {product.colors.slice(0, 2).map((color) => (
                 <span
                   key={color}
                   className="text-[10px] bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full"

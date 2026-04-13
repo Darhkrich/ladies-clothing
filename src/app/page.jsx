@@ -77,7 +77,7 @@ export default function Home() {
             {categories.map((cat, index) => (
               <Link
                 key={index}
-                href={`/products?category=${cat.slug}`}
+                href={`/products?category=${categories.slug}`}
                 className="group relative rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-[3/4] lg:aspect-[4/5]"
               >
                 <img
@@ -111,7 +111,7 @@ export default function Home() {
             <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto mb-4">
               <Truck className="w-6 h-6" />
             </div>
-            <h3 className="font-semibold text-lg mb-2">Fast & Free Delivery</h3>
+            <h3 className="font-semibold text-lg mb-2">Fast Delivery</h3>
             <p className="text-gray-600 text-sm">
               Orders arrive in 2‑3 days across all regions of Ghana
             </p>
