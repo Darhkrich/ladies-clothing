@@ -18,7 +18,7 @@ export default function ProductCard({ product }) {
   const BadgeIcon = product.badge ? badgeConfig[product.badge]?.icon : null;
 
   return (
-    <div className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full">
+    <div className="group bg-white  overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full">
       {/* Image container with badges */}
       <div className="relative aspect-[3/4] overflow-hidden bg-gray-100">
         <img
@@ -84,7 +84,7 @@ export default function ProductCard({ product }) {
               GH₵{product.price.toFixed(2)}
             </span>
             {hasDiscount && (
-              <span className="text-sm text-gray-400 line-through">
+              <span className="text-m text-gray-400 line-through">
                 GH₵{product.originalPrice.toFixed(2)}
               </span>
             )}
