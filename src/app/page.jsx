@@ -1,190 +1,170 @@
 // app/page.jsx
-
 import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import ProductCard from "@/components/ProductCard";
 import Link from "next/link";
 import { products } from "@/lib/data";
+import { ArrowRight, ShoppingBag, Truck, Shield, MessageCircle } from "lucide-react";
 
 export default function Home() {
-  return (
-    <main className="bg-[#f8f8f8] text-black">
+  const featuredProducts = products.filter(p => p.inStock).slice(0, 6);
 
+  const categories = [
+    { name: "Dresses", image: "/cloths.jpg", slug: "dresses" },
+    { name: "Bags", image: "/bags.jpg", slug: "bags" },
+    { name: "Accessories", image: "/acces.jpg", slug: "accessories" },
+  ];
+
+  return (
+    <main className="bg-white text-gray-900">
       <Navbar />
 
-      {/* HERO */}
-     
-      <section className="relative h-[80vh] flex items-center justify-center text-center text-white">
+      {/* HERO SECTION */}
+      <Hero />
 
-  <img
-    src="/hero.jpg"
-    className="absolute inset-0 w-full h-full object-cover"
-  />
-
-  {/* DARK OVERLAY */}
-  <div className="absolute inset-0 bg-black/50" />
-
-  <div className="relative z-10 max-w-2xl px-6">
-
-    <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
-      Shop Trendy Fashion That Turns Heads
-    </h1>
-
-    <p className="mt-4 text-gray-200">
-      Affordable, stylish outfits delivered fast across Ghana
-    </p>
-
-    <button className="mt-6 bg-white text-black px-6 py-3 rounded-lg font-medium hover:scale-105 transition">
-      Shop Collection
-    </button>
-
-  </div>
-
-</section>
-<section className="bg-white py-6 border-b">
-  <div className="max-w-6xl mx-auto px-6 grid grid-cols-3 text-center text-sm text-gray-600">
-
-    <p>🚚 Fast Delivery</p>
-    <p>💬 Easy WhatsApp Orders</p>
-    <p>✅ Quality Guaranteed</p>
-
-  </div>
-</section>
-
-      {/* FEATURED PRODUCTS */}
-      
-     <section className="max-w-5xl mx-auto px-10 py-16">
-
-  <h2 className="text-2xl md:text-3xl font-semibold mb-8">
-    Featured Products
-  </h2>
-
-
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 ">
-          {products.slice(0, 6).map((p) => (
-            <Link key={p.id} href={`/products/${p.id}`}>
-
-              
-            
-        <div className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-
-  <div className="relative overflow-hidden">
-
-    <img
-      src={p.image}
-      className="w-full aspect-[3/4] md:h-96 object-cover group-hover:scale-105 transition duration-300"
-    />
-
-    {/* HOVER BUTTON */}
-    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition">
-      <button className="bg-black text-white px-4 py-2 rounded-lg text-sm">
-        view details
-      </button>
-    </div>
-
-  </div>
-
-  <div className="p-4">
-
-    <h3 className="text-sm font-medium text-gray-900">
-      {p.name}
-    </h3>
-
-    <p className="text-base font-semibold text-gray-700 mt-1">
-      GH₵{p.price}
-    </p>
-
-
-    
-
-  </div>
-
-  
-
-</div>
-
-
-            </Link>
-          ))}
-
-        
+      {/* QUICK INFO BAR */}
+      <div className="bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 py-5 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center text-sm">
+          <div className="flex items-center justify-center gap-2 text-gray-700">
+            <Truck className="w-4 h-4" />
+            <span>Fast Delivery Across Ghana</span>
+          </div>
+          <div className="flex items-center justify-center gap-2 text-gray-700">
+            <MessageCircle className="w-4 h-4" />
+            <span>Order via WhatsApp in Seconds</span>
+          </div>
+          <div className="flex items-center justify-center gap-2 text-gray-700">
+            <Shield className="w-4 h-4" />
+            <span>Premium Quality Guaranteed</span>
+          </div>
         </div>
-
-<a
-        href="/products"
-        className="mt-6 px-6 py-3 bg-black text-white rounded-lg mx-auto block w-max hover:bg-gray-900 transition"
-      >
-        Shop Now
-      </a>
-      </section>
-
-      {/* CATEGORY SECTION */}
-      
-      <section className="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-6">
-
-  {[
-    { name: "Dresses", image: "/cloths.jpg" },
-    { name: "Bags", image: "/bags.jpg" },
-    { name: "Accessories", image: "/acces.jpg" },
-  ].map((cat, i) => (
-    <div key={i} className="relative rounded-xl overflow-hidden group">
-
-      <img
-        src={cat.image}
-        className="w-full h-64 object-cover group-hover:scale-105 transition"
-      />
-
-      <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-        <h3 className="text-white text-lg font-semibold">
-          {cat.name}
-        </h3>
       </div>
 
-    </div>
-  ))}
-
-</section>
-
-
-      {/* TRUST SECTION */}
-      <section className="px-6 py-16 text-center max-w-4xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold">
-          Why Shop With Us
-        </h2>
-
-        <div className="mt-10 grid md:grid-cols-3 gap-6 text-sm text-black">
+      {/* FEATURED PRODUCTS */}
+      <section className="max-w-7xl mx-auto px-6 py-16 sm:py-20">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-10">
           <div>
-            <h4 className="font-semibold text-black">Fast Delivery</h4>
-            <p className="mt-2">Get your orders delivered quickly anywhere in Ghana</p>
+            <h2 className="text-2xl sm:text-3xl font-medium text-gray-900">
+              Featured Collection
+            </h2>
+            <p className="text-gray-500 mt-2 text-sm sm:text-base">
+              Handpicked styles you'll love
+            </p>
           </div>
+          <Link
+            href="/products"
+            className="mt-4 sm:mt-0 inline-flex items-center gap-1 text-sm font-medium text-gray-900 hover:text-gray-600 transition group"
+          >
+            View All Products
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
 
-          <div>
-            <h4 className="font-semibold text-black">Premium Quality</h4>
-            <p className="mt-2">Carefully selected high-quality products</p>
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+          {featuredProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      </section>
 
-          <div>
-            <h4 className="font-semibold text-black">Easy Ordering</h4>
-            <p className="mt-2">Order directly on WhatsApp with no stress</p>
+      {/* SHOP BY CATEGORY */}
+      <section className="bg-gray-50 py-16 sm:py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 text-center mb-8 sm:mb-12">
+            Shop by Category
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {categories.map((cat, index) => (
+              <Link
+                key={index}
+                href={`/products?category=${cat.slug}`}
+                className="group relative rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-[3/4] lg:aspect-[4/5]"
+              >
+                <img
+                  src={cat.image}
+                  alt={cat.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="text-white text-xl sm:text-2xl font-medium">
+                    {cat.name}
+                  </h3>
+                  <span className="inline-flex items-center gap-1 text-white/80 text-sm mt-2 group-hover:gap-2 transition-all">
+                    Shop Now
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-black text-white text-center py-16">
+      {/* WHY SHOP WITH US */}
+      <section className="max-w-7xl mx-auto px-6 py-16 sm:py-20 text-center">
+        <h2 className="text-2xl sm:text-3xl font-medium text-gray-900">
+          Why Shop With Us
+        </h2>
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <div className="bg-gray-50 rounded-2xl p-8">
+            <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto mb-4">
+              <Truck className="w-6 h-6" />
+            </div>
+            <h3 className="font-semibold text-lg mb-2">Fast & Free Delivery</h3>
+            <p className="text-gray-600 text-sm">
+              Orders arrive in 2‑3 days across all regions of Ghana
+            </p>
+          </div>
+          <div className="bg-gray-50 rounded-2xl p-8">
+            <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto mb-4">
+              <ShoppingBag className="w-6 h-6" />
+            </div>
+            <h3 className="font-semibold text-lg mb-2">Premium Quality</h3>
+            <p className="text-gray-600 text-sm">
+              Every item is carefully inspected before shipping
+            </p>
+          </div>
+          <div className="bg-gray-50 rounded-2xl p-8">
+            <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto mb-4">
+              <MessageCircle className="w-6 h-6" />
+            </div>
+            <h3 className="font-semibold text-lg mb-2">Easy WhatsApp Ordering</h3>
+            <p className="text-gray-600 text-sm">
+              Just send a message with your item and we handle the rest
+            </p>
+          </div>
+        </div>
+      </section>
 
-  <h2 className="text-2xl font-semibold">
-    Ready to Order?
-  </h2>
+      {/* WHATSAPP CTA */}
+      <section className="bg-black text-white">
+        <div className="max-w-7xl mx-auto px-6 py-16 sm:py-20 text-center">
+          <h2 className="text-2xl sm:text-3xl font-medium">
+            Ready to Order?
+          </h2>
+          <p className="mt-3 text-gray-300 max-w-xl mx-auto">
+            Skip the complicated checkout. Send your order directly via WhatsApp and we'll confirm within minutes.
+          </p>
+          <Link
+            href="/cart"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full font-medium transition shadow-lg shadow-green-500/20"
+          >
+            <MessageCircle className="w-5 h-5" />
+            Order on WhatsApp
+          </Link>
+         
+        </div>
+      </section>
 
-  <p className="mt-2 text-gray-300">
-    Send your order directly via WhatsApp
-  </p>
-
-  <button className="mt-6 bg-green-500 px-6 py-3 rounded-lg hover:bg-green-600 transition">
-    Order on WhatsApp
-  </button>
-
-</section>
-
+      {/* FOOTER (simple version – can be extracted to separate component later) */}
+      <footer className="border-t border-gray-100 bg-white py-8">
+        <div className="max-w-7xl mx-auto px-6 text-center text-sm text-gray-500">
+          <p>© 2026 Your Store Name. All rights reserved.</p>
+        </div>
+      </footer>
     </main>
   );
 }

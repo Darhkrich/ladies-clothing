@@ -3,96 +3,168 @@ export const products = [
     id: "dress-1",
     name: "Elegant Red Dress",
     price: 250,
+    originalPrice: 320,
     category: "Dresses",
     image: "/shopping9.webp",
-    description: "Premium elegant dress for special occasions"
+    description: "A stunning red evening dress with a flattering silhouette, perfect for galas and weddings.",
+    rating: 4.8,
+    reviewCount: 124,
+    inStock: true,
+    colors: ["Red", "Burgundy"],
+    badge: "Best Seller"
   },
   {
     id: "dress-2",
     name: "Elegant Blue and White Dress",
     price: 250,
+    originalPrice: 250,
     category: "Dresses",
     image: "/shopping1.webp",
-    description: "Stylish handbag for everyday use"
+    description: "Chic blue and white patterned midi dress, ideal for brunch or daytime events.",
+    rating: 4.5,
+    reviewCount: 89,
+    inStock: true,
+    colors: ["Blue/White", "Navy"],
+    badge: "New"
   },
   {
     id: "bag-1",
-    name: "Black handbag",
+    name: "Black Handbag",
     price: 150,
+    originalPrice: 180,
     category: "Bags",
     image: "/images2.jpg",
-    description: "Minimal luxury bracelet"
+    description: "Versatile black leather handbag with gold-tone hardware, fits all daily essentials.",
+    rating: 4.6,
+    reviewCount: 56,
+    inStock: true,
+    colors: ["Black", "Tan"],
+    badge: "Sale"
   },
-    {
+  {
     id: "dress-3",
     name: "Elegant Yellow Dress",
     price: 250,
+    originalPrice: 250,
     category: "Dresses",
     image: "/shopping5.webp",
-    description: "Premium elegant dress for special occasions"
+    description: "Sunny yellow cocktail dress with delicate ruching, sure to turn heads.",
+    rating: 4.7,
+    reviewCount: 42,
+    inStock: true,
+    colors: ["Yellow"],
+    badge: "New"
   },
   {
     id: "bag-2",
     name: "Luxury Handbag",
     price: 300,
+    originalPrice: 350,
     category: "Bags",
     image: "/download (5).jpg",
-    description: "Stylish handbag for everyday use"
+    description: "Premium Italian leather tote with spacious interior and detachable shoulder strap.",
+    rating: 4.9,
+    reviewCount: 203,
+    inStock: false,
+    colors: ["Cognac", "Black", "Ivory"],
+    badge: "Best Seller"
   },
   {
     id: "acc-2",
     name: "Gold & Diamond Ring",
     price: 150,
+    originalPrice: 200,
     category: "Accessories",
     image: "/download (12).jpg",
-    description: "Minimal luxury bracelet"
+    description: "Elegant gold band accented with a single sparkling diamond – timeless and delicate.",
+    rating: 4.8,
+    reviewCount: 78,
+    inStock: true,
+    colors: ["Gold"],
+    badge: "Sale"
   },
-    {
+  {
     id: "dress-4",
     name: "Elegant Black and White Dress",
     price: 250,
+    originalPrice: 250,
     category: "Dresses",
     image: "/shopping8.webp",
-    description: "Premium elegant dress for special occasions"
+    description: "Classic monochrome sheath dress with contrast trim, suitable for office or dinner.",
+    rating: 4.4,
+    reviewCount: 67,
+    inStock: true,
+    colors: ["Black/White"],
+    badge: null
   },
   {
     id: "acc-3",
-    name: " Necklace and Earring Set",
+    name: "Necklace and Earring Set",
     price: 300,
+    originalPrice: 350,
     category: "Accessories",
     image: "/images77.jpg",
-    description: "Stylish handbag for everyday use"
+    description: "Glamorous cubic zirconia necklace and matching drop earrings for special occasions.",
+    rating: 4.7,
+    reviewCount: 112,
+    inStock: true,
+    colors: ["Silver", "Rose Gold"],
+    badge: "Best Seller"
   },
   {
     id: "bag-3",
     name: "Handbag",
     price: 150,
-    category: "Accessories",
+    originalPrice: 150,
+    category: "Bags", // fixed: was Accessories
     image: "/images1.jpg",
-    description: "Minimal luxury bracelet"
+    description: "Minimalist crossbody bag in soft vegan leather, adjustable strap and secure zip closure.",
+    rating: 4.3,
+    reviewCount: 34,
+    inStock: true,
+    colors: ["Blush", "Grey", "Black"],
+    badge: null
   },
-    {
+  {
     id: "dress-5",
     name: "Elegant Black Dress",
     price: 250,
+    originalPrice: 300,
     category: "Dresses",
     image: "/images13.jpg",
-    description: "Premium elegant dress for special occasions"
+    description: "The little black dress reimagined with subtle lace detailing and a modern cut.",
+    rating: 4.9,
+    reviewCount: 156,
+    inStock: true,
+    colors: ["Black"],
+    badge: "Sale"
   },
   {
     id: "bag-4",
     name: "Luxury Handbag",
     price: 300,
+    originalPrice: 300,
     category: "Bags",
     image: "/download (1).jpg",
-    description: "Stylish handbag for everyday use"
+    description: "Structured satchel bag with polished buckle closure and top handle.",
+    rating: 4.6,
+    reviewCount: 91,
+    inStock: true,
+    colors: ["Burgundy", "Navy", "Olive"],
+    badge: "New"
   },
   {
     id: "acc-4",
     name: "Gold Bracelet",
     price: 150,
+    originalPrice: 180,
     category: "Accessories",
     image: "/download (13).jpg",
-    description: "Minimal luxury bracelet"
+    description: "Delicate gold chain bracelet with a tiny charm – perfect for layering.",
+    rating: 4.5,
+    reviewCount: 63,
+    inStock: true,
+    colors: ["Gold"],
+    badge: "Sale"
   }
 ];
