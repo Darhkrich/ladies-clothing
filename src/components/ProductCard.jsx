@@ -83,12 +83,14 @@ export default function ProductCard({ product }) {
             <span className="text-lg font-semibold text-gray-900">
               GH₵{product.price.toFixed(2)}
             </span>
-            {hasDiscount && (
-              <span className="text-m text-gray-400 line-through">
+           
+          </div>
+ {hasDiscount && (
+              <span className="text-s text-gray-400 line-through">
                 GH₵{product.originalPrice.toFixed(2)}
               </span>
             )}
-          </div>
+
 
           {/* Colors (optional, if you want to show swatches) */}
           {product.colors && product.colors.length > 0 && (
